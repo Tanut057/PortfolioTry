@@ -1,0 +1,71 @@
+.bodyID {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #add8e6; 
+}
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('pic/bg.png'); /* ตั้งค่ารูปภาพพื้นหลังที่คุณต้องการ */
+    background-size: cover;
+    animation: bgfade 3s linear forwards,bgHold 2.5s linear forwards ;
+}
+
+.image-container {
+    position: relative;
+    z-index: 1;
+    animation: fadeInAndHold 2s linear forwards, fadeOut 1s linear 3s forwards;
+}
+@keyframes bgfade
+{
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+}
+@keyframes bgHold {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInAndHold {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
